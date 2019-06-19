@@ -1,0 +1,38 @@
+
+body {
+  background-image: repeating-linear-gradient(90deg, #4286f4, #23ad1b);
+}
+
+#soon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  font-family: 'Acme', sans-serif;
+  font-size: 65px;
+}
+
+p {
+  font-family: 'Acme', sans-serif;
+  font-size: 20px;
+}
+
+#twitter {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 10px;
+}
+
+#linkedin {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+}
