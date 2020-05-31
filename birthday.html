@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Celeste's Birthday Countdown</title>
+<style>
+body{ 
+
+    text-align: center; 
+
+    background: pink; 
+
+  font-family: sans-serif; 
+
+  font-weight: 100; 
+} 
+h1{ 
+
+  color: #396; 
+
+  font-weight: 100; 
+
+  font-size: 40px; 
+
+  margin: 40px 0px 20px; 
+} 
+
+ #clockdiv{ 
+
+    font-family: sans-serif; 
+
+    color: #fff; 
+
+    display: inline-block; 
+
+    font-weight: 100; 
+
+    text-align: center; 
+
+    font-size: 30px; 
+} 
+#clockdiv > div{ 
+
+    padding: 10px; 
+
+    border-radius: 3px; 
+
+    background: blue; /*#00BF96; */
+
+    display: inline-block; 
+} 
+#clockdiv div > span{ 
+
+    padding: 15px; 
+
+    border-radius: 3px; 
+
+    background: #00816A; 
+
+    display: inline-block; 
+} 
+smalltext{ 
+
+    padding-top: 5px; 
+
+    font-size: 16px; 
+}
+</style>
+</head>
+
+<body>
+<h1>Countdown Clock</h1>
+
+<!--
+<audio controls autoplay>
+  <source src="https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3">
+  Your browser does not support the audio element.
+</audio>
+-->
+
+<!--
+<audio id="audiotag1" src="https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3" preload="auto"></audio>
+-->
+
+<div id="clockdiv"> 
+  <div> 
+    <span class="days" id="day"></span> 
+    <div class="smalltext">Days</div> 
+  </div>
+
+  <div> 
+    <span class="hours" id="hour"></span> 
+    <div class="smalltext">Hours</div> 
+  </div>
+
+  <div> 
+    <span class="minutes" id="minute"></span> 
+    <div class="smalltext">Minutes</div>
+  </div> 
+
+  <div>
+    <span class="seconds" id="second"></span>
+    <div class="smalltext">Seconds</div>
+  </div>
+</div>
+
+<p id="demo"></p>
+</body>
+</html>
+
+<script>
+
+		/*
+		var audio = new Audio();
+		audio.src = "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3";
+		audio.play();
+		*/
+		
+	var deadline = new Date("july 7, 2020 09:00:00").getTime();
+	var x = setInterval(function() {
+	var now = new Date().getTime();
+	var delta = deadline - now;
+	var days = Math.floor(delta / (1000 * 60 * 60 * 24));
+	var hours = Math.floor((delta % (1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+	var minutes = Math.floor((delta % (1000 * 60 * 60))/(1000 * 60));
+	var seconds = Math.floor((delta % (1000 * 60)) / 1000);
+	
+	document.getElementById("day").innerHTML =days ;
+	document.getElementById("hour").innerHTML =hours;
+	document.getElementById("minute").innerHTML = minutes;
+	document.getElementById("second").innerHTML =seconds;
+
+		if (delta < 0) {
+		clearInterval(x);
+		document.getElementById("demo").innerHTML = "TIME UP";
+		document.getElementById("day").innerHTML ='0';
+		document.getElementById("hour").innerHTML ='0';
+	document.getElementById("minute").innerHTML ='0';
+	document.getElementById("second").innerHTML = '0';
+ 
+		}
+	}, 1000);
+		
+</script>
