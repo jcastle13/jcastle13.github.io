@@ -97,11 +97,15 @@ window.onload = function() {
           }
         }
         // draw condition
-        // turn > 0 or gameOver == false
+        // turn > 9 or gameOver == false
         if(turn > 9 && gameOver == false) {
           document.getElementById("result").innerText = "GAME OVER! IT WAS A DRAW!";
         }
+      } else {
+        alert("Game is over.  Please click the New Game button to start again.");
       }
+    } else {
+      alert("This box was already filled.  Please click on another one.");
     }
   }
 }
